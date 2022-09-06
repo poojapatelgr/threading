@@ -1,0 +1,18 @@
+import threading
+import time
+
+def foo():
+    while True:
+        print(time.ctime())
+        #threading.Timer(WAIT_SECONDS, foo).start()
+        time.sleep(2)
+
+def UEListen():
+    while True:
+        #serverSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #serverSock.bind((UDP_IP_ADDRESS, UDP_PORT_NO))
+        print("Inside UEListen-While-uesocket")
+        time.sleep(2)
+
+threading.Thread(target=UEListen).start()
+threading.Thread(target=foo).start()
